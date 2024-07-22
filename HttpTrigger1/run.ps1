@@ -1,7 +1,7 @@
 using namespace System.Net
 
 # Input bindings are passed in via param block.
-param($Request, $TriggerMetadata, $Testtrigger)
+param($Request, $TriggerMetadata,)
 
 # Write to the Azure Functions log stream.
 Write-Host "PowerShell HTTP trigger function processed a request."
@@ -12,7 +12,7 @@ if (-not $name) {
     $name = $Request.Body.Name
 }
 
-$body = "This HTTP triggered function executed successfully. $Testtrigger"
+$body = "This HTTP triggered function executed successfully."
 
 if ($name) {
     $body = "Hello, $name. This HTTP triggered function executed successfully. Test"
