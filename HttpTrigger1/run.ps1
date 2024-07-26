@@ -14,9 +14,7 @@ if (-not $name) {
 
 $body = "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
 
-Import-Module Az
-
-az connectedmachine list --resource-group "rg-law-test"
+Get-AzConnectedMachine -SubscriptionId "36c78419-aecf-41f2-b97d-7f5549fc5d7c"
 
 if ($name) {
     $body = "Hello, $name. This HTTP triggered function executed successfully."
